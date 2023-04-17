@@ -1,1 +1,1 @@
-# holbertonschool-simple_shell
+# This project is about creating a simple version of shell.

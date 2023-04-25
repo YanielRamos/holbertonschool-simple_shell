@@ -1,21 +1,40 @@
-#include "shell.h"
+#include "sshell.h"
 
-/** main - funtcion
- * @ac: argument counter
- * @argv: argument vector
- * Return: 0 success
- */
-
-int main(int ac, char ** argv)
+int is_empty(const char *str)
 {
-	char *prompt = "(Y&L)$";
-	char *lptr;
-	size_t n = 0;
+	while (*str != '\0')
+	{
+	if (!isspace ((unsigned char) * str))
+		return (0);
+	str++;
+	}
+	return (1);
+}
 
-	printf("%s", prompt);
-	getline(&lptr, &n, stdin);
-	printf("%s\n", lptr);
+int main(void)
+{
+	char *line = NULL;
+	size_t len = 0;
+	ssize_t read;
 
-	free(lptr);
+	while (1)
+	{
+		prompt();
+		read = getline(&line, &len, stdin);
+
+		if (read == -1)
+		{
+			break;
+		}
+		execute(line);
+
+		if (!is_empty(line))
+		{
+			execute(line);
+		}
+	}
+
+	free(line);
 	return (0);
 }
+

@@ -1,5 +1,7 @@
 # #cisfun$
-![alt text](https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif)
+<p align="center">
+  <img src="https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif" width="650" height="200">
+</p>
 
 
 ## 📜 Introduction
@@ -100,7 +102,3 @@ You don’t have to:
 
 ## 👨🏾‍💻Developers
 [Luis Ayala](https://github.com/luisayala323) & [Yaniel Ramos](https://github.com/YanielRamos)
-
-
-
-[Back to Top](# #cisfun$)

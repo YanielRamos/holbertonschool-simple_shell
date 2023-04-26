@@ -1,6 +1,6 @@
 # #cisfun$
 <p align="center">
-  <img src="https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif" width="650" height="200">
+  <img src="https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif">
 </p>
 
 

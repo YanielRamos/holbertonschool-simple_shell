@@ -1,5 +1,7 @@
-## Simple version of shell ( #cisfun$ )
-![alt text](https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif)
+# #cisfun$
+<p align="center">
+  <img src="https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif">
+</p>
 
 
 ## 📜 Introduction
@@ -92,9 +94,11 @@ You don’t have to:
     - wait4 (man 2 wait4)
     - write (man 2 write)
 
+### 🌴Enviroments
+    - Language: C
+    - Compiler: gcc
+    - OS: Ubuntu 20.04
+    - Style guideines: Betty Style
 
-Language: ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-
-
-## Developers
+## 👨🏾‍💻Developers
 [Luis Ayala](https://github.com/luisayala323) & [Yaniel Ramos](https://github.com/YanielRamos)

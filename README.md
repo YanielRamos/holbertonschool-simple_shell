@@ -1,4 +1,5 @@
-## This project is about creating a simple version of shell.
+## Simple version of shell ( #cisfun$ )
+![alt text](https://i.pinimg.com/originals/31/03/c8/3103c8eebafd5581ad744bc3ce68b4d5.gif)
 
 
 ## 📜 Introduction

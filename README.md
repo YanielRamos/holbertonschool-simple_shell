@@ -92,9 +92,11 @@ You don’t have to:
     - wait4 (man 2 wait4)
     - write (man 2 write)
 
+### 🌴Enviroments
+    - Language: ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
+    - Compiler: gcc
+    - OS: Ubuntu 20.04
+    - Style guideines: Betty Style
 
-Language: ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
-
-
-## Developers
+## 👨🏾‍💻Developers
 [Luis Ayala](https://github.com/luisayala323) & [Yaniel Ramos](https://github.com/YanielRamos)

@@ -1,5 +1,10 @@
 #include "sshell.h"
 
+/**
+ * prompt - function that prints the prompt
+ * @void: no parameters needed
+ */
+
 void prompt(void)
 {
 	if (isatty(STDIN_FILENO))
@@ -8,9 +13,15 @@ void prompt(void)
 	}
 }
 
+/**
+ * free_args - function that free memory
+ * @args: comando fthe user to be free
+ */
+
 void free_args(char **args)
 {
 	int i;
+
 	if (args == NULL)
 		return;
 

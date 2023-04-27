@@ -24,7 +24,6 @@ void shell_ls(char **args)
 			count++;
 		}
 	}
-	printf("\n");
 	closedir(dir);
 }
 
@@ -68,6 +67,7 @@ void shell_echo(char **args)
 		if (args[i + 1] != NULL)
 			printf(" ");
 	}
+	printf("\n");
 }
 
 void shell_mkdir(char **args)

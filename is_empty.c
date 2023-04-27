@@ -1,7 +1,7 @@
 #include "sshell.h"
 
 /**
- * is_empty - function that verify if the user types somehting in the prompt
+ * is_empty - function that verify if the prompt is empty
  * @str: string in the prompt
  * Return: Return 1 for success
  */

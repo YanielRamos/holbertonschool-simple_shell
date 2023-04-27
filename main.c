@@ -1,15 +1,10 @@
 #include "sshell.h"
 
-int is_empty(const char *str)
-{
-	while (*str != '\0')
-	{
-	if (!isspace ((unsigned char) * str))
-		return (0);
-	str++;
-	}
-	return (1);
-}
+/**
+ * main - function of the shell
+ * @void: no parameters needed
+ * Return: 0 for success
+ */
 
 int main(void)
 {
@@ -26,7 +21,6 @@ int main(void)
 		{
 			break;
 		}
-		execute(line);
 
 		if (!is_empty(line))
 		{
@@ -37,4 +31,3 @@ int main(void)
 	free(line);
 	return (0);
 }
-

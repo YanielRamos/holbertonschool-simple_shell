@@ -6,14 +6,14 @@ void shell_touch(char **args)
 
         if (args[1] == NULL)
         {
-                fprintf(stderr, "simple_shell: expected argument to \"touch\"\n");
+                fprintf(stderr, ": expected argument to \"touch\"\n");
                 return;
         }
         fd = open(args[1], O_RDWR | O_CREAT, 0644);
 
         if (fd == -1)
         {
-                perror("simple_shell");
+                perror("touch");
         }
         else
         {
@@ -25,12 +25,12 @@ void shell_cd(char **args)
 {
         if (args[1] == NULL)
         {
-                fprintf(stderr, "simple_shell: expected argument to \"cd\"\n");
+                fprintf(stderr, ": expected argument to \"cd\"\n");
                 return;
         }
         if (chdir(args[1]) != 0)
         {
-                perror("simple_shell");
+                perror("cd");
         }
 }
 
@@ -43,7 +43,7 @@ void shell_cp(char **args)
 
         if (args[1] == NULL || args[2] == NULL)
         {
-                fprintf(stderr, "simple_shell: expected 2 arguments to \"cp\"\n");
+                fprintf(stderr, ": expected 2 arguments to \"cp\"\n");
                 return;
         }
         src_fd = open(args[1], O_RDONLY);
@@ -51,7 +51,7 @@ void shell_cp(char **args)
 
         if (src_fd == -1 || dest_fd == -1)
         {
-                perror("simple_shell");
+                perror("cp");
         }
         else
         {
@@ -68,12 +68,12 @@ void shell_mv(char **args)
 {
         if (args[1] == NULL || args[2] == NULL)
         {
-                fprintf(stderr, "simple_shell: expected 2 arguments to \"mv\"\n");
+                fprintf(stderr, ": expected 2 arguments to \"mv\"\n");
                 return;
         }
         if (rename(args[1], args[2]) == -1)
         {
-                perror("simple_shell");
+                perror("mv");
         }
 }
 
@@ -84,7 +84,7 @@ void shell_pwd(char **args)
 
     if (getcwd(cwd, sizeof(cwd)) == NULL)
     {
-        perror("simple_shell");
+        perror("pwd");
         return;
     }
 

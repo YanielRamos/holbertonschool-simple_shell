@@ -20,7 +20,7 @@ void shell_ls(char **args)
 	{
 		if (entry->d_name[0] != '.')
 		{
-			printf("%s  ", entry->d_name);
+			printf("%s\n", entry->d_name);
 			count++;
 		}
 	}

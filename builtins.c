@@ -4,19 +4,28 @@ void shell_ls(char **args)
 {
 	DIR *dir;
 	struct dirent *entry;
+	int count = 0;
 	(void)args;
+
+	if (args[2] != NULL)
+		return;
 
 	dir = opendir(".");
 	if (dir == NULL)
 	{
-		perror("simple_shell");
+		perror("ls");
 		return;
 	}
 
 	while ((entry = readdir(dir)) != NULL)
 	{
-		printf("%s\n", entry->d_name);
+		if (entry->d_name[0] != '.')
+		{
+			printf("%s  ", entry->d_name);
+			count++;
+		}
 	}
+	printf("\n");
 	closedir(dir);
 }
 
@@ -28,13 +37,13 @@ void shell_cat(char **args)
 
 	if (args[1] == NULL)
 	{
-		fprintf(stderr, "#cisfun: expected argument to \"cat\"\n");
+		fprintf(stderr, ": expected argument to \"cat\"\n");
 		return;
 	}
 	fd = open(args[1], O_RDONLY);
 	if (fd == -1)
 	{
-		perror("#cisfun");
+		perror("cat");
 		return;
 	}
 
@@ -49,7 +58,6 @@ void shell_echo(char **args)
 {
 	if (args[1] == NULL)
 	{
-		printf("\n");
 		return;
 	}
 	printf("%s\n", args[1]);
@@ -59,12 +67,12 @@ void shell_mkdir(char **args)
 {
 	if (args[1] == NULL)
 	{
-		fprintf(stderr, "#cisfun: expected argument to \"mkdir\"\n");
+		fprintf(stderr, ": expected argument to \"mkdir\"\n");
 		return;
 	}
 	if (mkdir(args[1], 0755) == -1)
 	{
-		perror("#cisfun");
+		perror("mkdir");
 	}
 }
 
@@ -72,11 +80,11 @@ void shell_rm(char **args)
 {
 	if (args[1] == NULL)
 	{
-		fprintf(stderr, "#cisfun: expected argument to \"rm\"\n");
+		fprintf(stderr, ": expected argument to \"rm\"\n");
 		return;
 	}
 	if (remove(args[1]) == -1)
 	{
-		perror("#cisfun");
+		perror("rm");
 	}
 }

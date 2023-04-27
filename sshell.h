@@ -20,6 +20,8 @@ void execute(char *line);
 char **parse_arguments(char *line);
 void free_args(char **args);
 int check_for_builtins(char *command, char **args);
+int is_empty(const char *str);
+
 
 /* Shell Functions Prototypes */
 void shell_ls(char **args);

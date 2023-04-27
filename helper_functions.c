@@ -15,50 +15,52 @@ void execute(char *line)
 	pid_t pid;
 
 
-    args = parse_arguments(line);
+	args = parse_arguments(line);
 
-    if (args[0] == NULL) 
-    {
-        free_args(args);
-        return;
-    }
+	if (args[0] == NULL)
+	{
+		free_args(args);
+		return;
+	}
 
 
-    check = check_for_builtins(args[0], args);
+	check = check_for_builtins(args[0], args);
 
-    if (check == 1)
-    {
-        free_args(args);
-    }
-    else if (check == -1)
-    {
-        free_args(args);
-        exit(EXIT_SUCCESS);
-    }
-    else
-    {
+	if (check == 1)
+	{
+		free_args(args);
+	}
+	else if (check == -1)
+	{
+		free_args(args);
+		exit(EXIT_SUCCESS);
+	}
+	else
+	{
+		pid = fork();
 
-        if ((pid = fork()) == 0)
-        {
-            if (execve(args[0], args, NULL) == -1)
-            {
-                perror("simple_shell");
-                exit(EXIT_FAILURE);
-            }
-        }
-        else
-        {
-            waitpid(pid, &status, 0);
-        }
-        free_args(args);
-    }
+		if (pid == 0)
+		{
+			if (execve(args[0], args, NULL) == -1)
+			{
+				perror("#Error");
+				exit(EXIT_FAILURE);
+			}
+		}
+		else
+		{
+			waitpid(pid, &status, 0);
+		}
+		free_args(args);
+	}
 }
 
 int check_for_builtins(char *command, char **args)
 {
 	int i;
 
-	struct {
+	struct
+	{
 		char *name;
 		void (*function)(char **args);
 	} builtins[] = {
@@ -82,13 +84,13 @@ int check_for_builtins(char *command, char **args)
 		{
 			if (builtins[i].function == NULL)
 			{
-				return -1; /* exit command*/
+				return (-1); /* exit command*/
 			}
 			builtins[i].function(args);
-			return 1;
+			return (1);
 		}
 	}
-	return 0;
+	return (0);
 }
 char **parse_arguments(char *line)
 {
@@ -98,7 +100,7 @@ char **parse_arguments(char *line)
 
 	if (!tokens)
 	{
-		fprintf(stderr, "#cisfun$: allocation error\n");
+		fprintf(stderr, "#: allocation error\n");
 		exit(EXIT_FAILURE);
 	}
 	token = strtok(line, " \t\r\n\a");
@@ -119,14 +121,14 @@ char **parse_arguments(char *line)
 			tokens = realloc(tokens, bufsize * sizeof(char *));
 			if (!tokens)
 			{
-				fprintf(stderr, "#cisfun$: allocation error\n");
+				fprintf(stderr, ": allocation error\n");
 				exit(EXIT_FAILURE);
 			}
 		}
 		token = strtok(NULL, " \t\r\n\a");
 	}
 	tokens[position] = NULL;
-	return tokens;
+	return (tokens);
 }
 void free_args(char **args)
 {

@@ -2,7 +2,8 @@
 
 /**
  * main - function of the shell
- * @void: no parameters needed
+ * @ac: argument counter
+ * @argv: argument vector
  * Return: 0 for success
  */
 

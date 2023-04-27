@@ -24,7 +24,7 @@ char *search_executable_in_path(const char *executable)
 		if (stat(full_path, &st) == 0 && (st.st_mode & S_IXUSR))
 		{
 			free(path_copy);
-			return full_path;
+			return (full_path);
 		}
 
 		free(full_path);

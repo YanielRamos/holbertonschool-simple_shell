@@ -5,9 +5,8 @@ void shell_ls(char **args)
 	DIR *dir;
 	struct dirent *entry;
 	int count = 0;
-	(void)args;
 
-	if (args[2] != NULL)
+	if (args[1] != NULL && args[2] != NULL)
 		return;
 
 	dir = opendir(".");
@@ -56,11 +55,19 @@ void shell_cat(char **args)
 
 void shell_echo(char **args)
 {
+	int i;
+	
 	if (args[1] == NULL)
 	{
 		return;
 	}
-	printf("%s\n", args[1]);
+
+	for (i = 1; args[i] != NULL; i++)
+	{
+		printf("%s\n", args[1]);
+		if (args[i + 1] != NULL)
+			printf(" ");
+	}
 }
 
 void shell_mkdir(char **args)

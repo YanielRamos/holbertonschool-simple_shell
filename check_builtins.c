@@ -19,6 +19,7 @@ int check_for_builtins(char *command, char **args)
                 {"cp", shell_cp},
                 {"mv", shell_mv},
                 {"pwd", shell_pwd},
+		{"env", shell_env},
                 {"exit", NULL},
                 {NULL, NULL}
         };

@@ -6,18 +6,22 @@
  * Return: 0 for success
  */
 
-int main(void)
+int main(int ac, char **argv)
 {
+	ssize_t nread;
 	char *line = NULL;
 	size_t len = 0;
-	ssize_t read;
+	char **args = NULL;
+	char *executable_path = NULL;
+	(void)ac;
+	(void)argv;
 
 	while (1)
 	{
 		prompt();
-		read = getline(&line, &len, stdin);
+		nread = getline(&line, &len, stdin);
 
-		if (read == -1)
+		if (nread == -1)
 		{
 			break;
 		}
@@ -26,8 +30,17 @@ int main(void)
 		{
 			execute(line);
 		}
-	}
 
+		/* Free the memory allocated for args and executable_path */
+		if (args != NULL)
+		{
+			free_args(args);
+		}
+		if (executable_path != NULL)
+		{
+			free(executable_path);
+		}
+	}
 	free(line);
 	return (0);
 }

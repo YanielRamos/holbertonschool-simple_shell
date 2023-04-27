@@ -66,6 +66,11 @@ char **parse_arguments(char *line)
 		token_start = (*token_end == '"') ? token_end + 1 : token_end;
 	}
 
+	if (*token_start == '\0' && position == 0)
+	{
+		free(tokens);
+		return (NULL);
+	}
 	tokens[position] = NULL;
 	return (tokens);
 }

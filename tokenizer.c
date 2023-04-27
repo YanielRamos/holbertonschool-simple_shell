@@ -17,7 +17,6 @@ char **parse_arguments(char *line)
 	token_start = line;
 	while (*token_start != '\0')
 	{
-		// Skip leading whitespace
 		while (isspace((unsigned char)*token_start))
 		{
 			token_start++;

@@ -13,7 +13,6 @@ int main(int ac, char **argv)
 	char *line = NULL;
 	size_t len = 0;
 	char **args = NULL;
-	char *executable_path = NULL;
 	(void)ac;
 	(void)argv;
 
@@ -36,10 +35,6 @@ int main(int ac, char **argv)
 		if (args != NULL)
 		{
 			free_args(args);
-		}
-		if (executable_path != NULL)
-		{
-			free(executable_path);
 		}
 	}
 	free(line);
